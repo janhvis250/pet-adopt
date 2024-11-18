@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Adoption Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Pet Haven</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pets">Pets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#donate">Donate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Social Media Icons -->
+  <div class="social-icons text-center">
+    <a href="https://www.instagram.com/jannu.si/" class="icon" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/janhvi-singh-0a87072b6/" class="icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/janhvis250" class="icon" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="tel:9219435121" class="icon"><i class="fas fa-phone"></i></a>
+    <a href="mailto:singhjanhvi2006@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="bg-light text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Find Your New Best Friend</h1>
+      <p class="lead highlight">Adopt a pet today and give them a forever home.</p>
+      <a href="#pets" class="btn btn-primary btn-lg">View Pets</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-secondary text-light">
+    <div class="container">
+      <h2 class="text-center mb-4">About Us</h2>
+      <p>Welcome to Pet Haven! We are dedicated to connecting loving families with adorable pets in need of a home. Our mission is to rescue, rehabilitate, and rehome animals while raising awareness about pet adoption.</p>
+    </div>
+  </section>
+
+  <!-- Pets Section -->
+  <section id="pets" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Meet Our Pets</h2>
+      <div class="row g-4">
+        <!-- Pet Card 1 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="dog1.jpg" class="card-img-top" alt="Pet Image 1">
+            <div class="card-body">
+              <h5 class="card-title">Buddy</h5>
+              <p class="card-text">Age: 2 years<br>Breed: Labrador Retriever</p>
+              <a href="#" class="btn btn-primary">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+        <!-- Pet Card 2 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="cat1.jpg" class="card-img-top" alt="Pet Image 2">
+            <div class="card-body">
+              <h5 class="card-title">Mittens</h5>
+              <p class="card-text">Age: 1 year<br>Breed: Persian Cat</p>
+              <a href="#" class="btn btn-primary">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+        <!-- Pet Card 3 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="dog2.jpg" class="card-img-top" alt="Pet Image 3">
+            <div class="card-body">
+              <h5 class="card-title">Max</h5>
+              <p class="card-text">Age: 3 years<br>Breed: German Shepherd</p>
+              <a href="#" class="btn btn-primary">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Section -->
+  <section id="donate" class="py-5 bg-warning text-dark">
+    <div class="container text-center">
+      <h2 class="mb-4">Donate to Our Shelter</h2>
+      <p>Your donations help us care for our shelter animals. Please contribute to give them a better life.</p>
+      <!-- PayPal Donation Button -->
+      <div id="paypal-button-container"></div>
+      <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+      <script>
+        paypal.Buttons({
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{
+                amount: {
+                  value: '10.00' // You can replace this with a dynamic value
+                }
+              }]
+            });
+          },
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+              alert('Thank you for your donation, ' + details.payer.name.given_name);
+            });
+          }
+        }).render('#paypal-button-container');
+      </script>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your Name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Your Email">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2024 Pet Haven. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/jannu.si/" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/janhvi-singh-0a87072b6/" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/janhvis250" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

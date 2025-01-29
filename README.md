@@ -75,9 +75,11 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Author
-Janhvi Singh  or Supriya Singh
+Janhvi Singh
 
 Instagram
 LinkedIn
 GitHub
 Thank you for visiting Pet Haven! 🐾
+
+copyright by AMAN KAUSHAL
